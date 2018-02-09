@@ -1,0 +1,9 @@
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\bin\Debug\Midterm.exe.config
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\bin\Debug\Midterm.exe
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\bin\Debug\Midterm.pdb
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.csprojResolveAssemblyReference.cache
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.csproj.CoreCompileInputs.cache
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.exe
+C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.pdb
