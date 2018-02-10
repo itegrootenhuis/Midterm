@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Midterm
 {
-    class Product
+    public class Product
     {
-        private string Name { get; set; }
-        private string Category { get; set; }
-        private string Description { get; set; }
-        private string Price { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public string Description { get; set; }
+        public string Price { get; set; }
 
         public Product(string name, string category, string description, string price)
         {

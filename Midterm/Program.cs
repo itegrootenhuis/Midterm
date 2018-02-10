@@ -11,7 +11,6 @@ namespace Midterm
     {
         static void Main(string[] args)
         {
-            HandleJsonData.GetProducts();
         }
     }
 }

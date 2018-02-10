@@ -7,3 +7,11 @@ C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.csprojReso
 C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.csproj.CoreCompileInputs.cache
 C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.exe
 C:\Users\test\Documents\GrandCircus\Midterm\Midterm\obj\Debug\Midterm.pdb
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\bin\Debug\Midterm.exe.config
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\obj\Debug\Midterm.exe
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\obj\Debug\Midterm.pdb
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\bin\Debug\Midterm.exe
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\bin\Debug\Midterm.pdb
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\TeGro\Documents\Grand Circus\Midterm\Midterm\Midterm\obj\Debug\Midterm.csprojResolveAssemblyReference.cache
