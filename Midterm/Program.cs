@@ -10,6 +10,7 @@ namespace Midterm
     {
         static void Main(string[] args)
         {
+            PaymentTypeController.init();
         }
     }
 }
