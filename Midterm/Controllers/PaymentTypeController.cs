@@ -14,6 +14,7 @@ namespace Midterm
         public static void init()
         {
             GetPaymentType.GetPaymentView();
+            PaymentType(GetPaymentType.Option, GetPaymentType.Amount);
         }
 
 
@@ -28,7 +29,7 @@ namespace Midterm
 
                     CashPayment cash = new CashPayment();
                         
-                       // MakePayment(amount);
+                      cash.MakePayment(amount);
                     break;
 
                 case "2":

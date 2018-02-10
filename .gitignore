@@ -2,3 +2,6 @@
 Midterm/\.vs/Midterm/v15/Server/sqlite3/
 
 Midterm/\.vs/Midterm/v15/sqlite3/
+bin
+*.userprefs
+obj
