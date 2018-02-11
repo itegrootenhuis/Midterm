@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ShoppingCart.cs" />
     <Compile Include="Views\Card.cs" />
     <Compile Include="Views\Cash.cs" />
     <Compile Include="Views\Check.cs" />
@@ -62,9 +63,6 @@
     <None Include="packages.config" />
     <None Include="products.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
