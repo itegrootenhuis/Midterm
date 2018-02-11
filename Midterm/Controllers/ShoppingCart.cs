@@ -19,7 +19,7 @@ namespace Controllers
         }
 
         //Call to get total due before tax
-        public static double GetTotal()
+        public static double GetSubtotal()
         {
             double total = 0.00;
             foreach (ShoppingCartItem item in Cart)
@@ -27,6 +27,18 @@ namespace Controllers
                 total += item.Product.Price * item.Qty;
             }
             return total;
+        }
+
+        public static double GetTax()
+        {
+            double tax = GetSubtotal() * .06;
+            return tax;
+        }
+
+        //Call to return total after tax
+        public static double GetTotal()
+        {
+            return GetSubtotal() * 1.06;
         }
         
         //Checks the list "Cart" to see if the new item matches an existing item
