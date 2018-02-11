@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using Views;
+using Midterm;
 
 namespace Controllers
 {
@@ -12,10 +13,11 @@ namespace Controllers
     {
         internal static void InitApp()
         {
+            ShoppingCart.InitCart();
             WriteToConsole.WriteProducts(HandleJsonData.GetProducts());
             WriteToConsole.GetUserProduct();
 
-            if (WriteToConsole.CheckOutOrNot() == "y")
+            if (WriteToConsole.CheckOutOrNot() == "n")
             {
                 Console.Clear();
                 InitApp();
@@ -26,10 +28,13 @@ namespace Controllers
             }
         }
 
-        public static void AddProductToCart(int userInput)
+        public static void AddProductToCart(int userInput, int qty)
         {
-            //TODO
-        }
+            ProductsList productsList = HandleJsonData.GetProducts();
+            List<Product> products = productsList.ProductList;
 
+            ShoppingCartItem cartItem = new ShoppingCartItem(products[userInput - 1], qty);
+            ShoppingCart.AddToCart(cartItem);
+        }
     }
 }

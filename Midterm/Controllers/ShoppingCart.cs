@@ -1,23 +1,30 @@
-﻿using System;
+﻿using Midterm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Midterm
+namespace Controllers
 {
     class ShoppingCart
     {
         //List containing ordered items
         public static List<ShoppingCartItem> Cart { get; set; }
 
+        public static void InitCart()
+        {
+            if (Cart == null)
+                Cart = new List<ShoppingCartItem>();
+        }
+
         //Call to get total due before tax
         public static double GetTotal()
         {
             double total = 0.00;
-            foreach (ShoppingCartItem x in Cart)
+            foreach (ShoppingCartItem item in Cart)
             {
-                total += x.Product.Price * x.Qty;
+                total += item.Product.Price * item.Qty;
             }
             return total;
         }
@@ -30,11 +37,11 @@ namespace Midterm
             if (Cart.Count > 0)
             {
                 bool contains = false;
-                foreach (ShoppingCartItem s in Cart)
+                foreach (ShoppingCartItem item in Cart)
                 {
-                    if (s.Product.Name==newItem.Product.Name)
+                    if (item.Product.Name == newItem.Product.Name)
                     {
-                        s.Qty += newItem.Qty;
+                        item.Qty += newItem.Qty;
                         contains = true;
                         break;
                     }
@@ -49,7 +56,5 @@ namespace Midterm
                 Cart.Add(newItem);
             }
         }
-
-
     }
 }

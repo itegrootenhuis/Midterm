@@ -23,12 +23,7 @@ namespace Views
             }
         }
 
-        internal static string CheckOutOrNot()
-        {
-            Console.Write("Would you like to check out? (Y/N): ");
-            string continueShopping = Console.ReadLine();
-            return continueShopping.ToLower();
-        }
+        
 
         internal static void GetUserProduct()
         {
@@ -38,13 +33,38 @@ namespace Views
             bool bit = int.TryParse(Console.ReadLine(), out userInput);
 
             if (bit)
-                AppNavigater.AddProductToCart(userInput);
+                AppNavigater.AddProductToCart(userInput, GetQuantity());
             else
             {
                 Console.Clear();
                 Console.WriteLine("Your input was invalid");
                 GetUserProduct();
             }
+        }
+
+        private static int GetQuantity()
+        {
+            int qty;
+
+            Console.Write("How many do you want?: ");
+            bool bit = int.TryParse(Console.ReadLine(), out qty);
+
+            if (bit)
+                return qty;
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Your input was invalid");
+                GetQuantity();
+                return 0;
+            }
+        }
+
+        internal static string CheckOutOrNot()
+        {
+            Console.Write("Would you like to check out? (Y/N): ");
+            string continueShopping = Console.ReadLine();
+            return continueShopping.ToLower();
         }
     }
 }
