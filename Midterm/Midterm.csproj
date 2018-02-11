@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ShoppingCart.cs" />
     <Compile Include="Controllers\AppNavigater.cs" />
     <Compile Include="Controllers\ShoppingCart.cs" />
     <Compile Include="ShoppingCartItem.cs" />
