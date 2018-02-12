@@ -11,50 +11,63 @@ namespace Views
 {
     public static class WriteToConsole
     {
+        public static int counter = 0;
+
         internal static void WriteProducts(ProductsList productsList)
         {
+            counter = 0;
             List<Product> products = productsList.ProductList;
-            int counter = 0;
-
+            
             foreach (Product prod in products)
             {
                 counter++;
                 Console.WriteLine("{4, 2} : {0, -32}{1, -10:c}{2, -20}{3, -10}", prod.Name, prod.Price, prod.Category, prod.Description, counter);
             }
+            
+            if(ShoppingCart.Cart.Count > 0)
+            {
+                counter++;
+                Console.WriteLine("{0, 2} : You have {1} item(s) in your cart, select this option to checkout.", counter, ShoppingCart.Cart.Count);
+            }
         }
 
         internal static void GetUserProduct()
         {
-            int userInput;
+            Console.WriteLine("\nEnter a product number to add it to your cart: ");
+            bool bit = int.TryParse(Console.ReadLine(), out int userInput);
 
-            Console.Write("\nEnter a product number to add it to your cart: ");
-            bool bit = int.TryParse(Console.ReadLine(), out userInput);
-
-            if (bit)
+            if (bit && ShoppingCart.Cart.Count >= 0 && userInput != counter)
+            {
                 AppNavigater.AddProductToCart(userInput, GetQuantity());
+                Console.Clear();
+                AppNavigater.InitApp();
+            }
+            else if (bit && ShoppingCart.Cart.Count > 0 && userInput == counter)
+            {
+                AppNavigater.CheckOut(true);
+            }
             else
             {
                 Console.Clear();
                 Console.WriteLine("Your input was invalid");
-                GetUserProduct();
+                AppNavigater.InitApp();
             }
         }
 
         private static int GetQuantity()
         {
-            int qty;
-
             Console.Write("How many do you want?: ");
-            bool bit = int.TryParse(Console.ReadLine(), out qty);
+            bool bit = int.TryParse(Console.ReadLine(), out int qty);
 
             if (bit)
+            {
                 return qty;
+            }
             else
             {
                 Console.Clear();
                 Console.WriteLine("Your input was invalid");
-                GetQuantity();
-                return 0;
+                return GetQuantity();
             }
         }
 

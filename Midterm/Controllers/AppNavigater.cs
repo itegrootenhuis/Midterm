@@ -16,15 +16,18 @@ namespace Controllers
             ShoppingCart.InitCart();
             WriteToConsole.WriteProducts(HandleJsonData.GetProducts());
             WriteToConsole.GetUserProduct();
+        }
 
-            if (WriteToConsole.CheckOutOrNot() == "n")
+        public static void CheckOut(bool IsCheckout)
+        {
+            if (IsCheckout)
+            {
+                // TODO: Checkout
+            }
+            else
             {
                 Console.Clear();
                 InitApp();
-            }
-            else
-            { 
-                //TODO: checkout 
             }
         }
 
