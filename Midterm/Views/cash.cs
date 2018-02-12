@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Models;
 using Controllers;
 
-namespace Midterm
+namespace Views
 {
     public class CashPayment
     {
