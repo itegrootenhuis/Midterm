@@ -64,5 +64,35 @@ namespace Views
             string continueShopping = Console.ReadLine();
             return continueShopping.ToLower();
         }
+
+        public static void PrintReceipt()
+        {
+            Console.WriteLine("Receipt:\n====================");
+            foreach (ShoppingCartItem prod in ShoppingCart.Cart)
+            {
+                Console.WriteLine("{0} X {1} | {2, 7:C}", prod.Qty, prod.Product.Name, (prod.Qty * prod.Product.Price));
+            }
+            Console.WriteLine("\nSubtotal: {0:C}" + ShoppingCart.GetSubtotal());
+            Console.WriteLine("Tax: {0:C}", ShoppingCart.GetTax());
+            Console.WriteLine("Total: {0:C}", ShoppingCart.GetTotal());
+            Console.WriteLine("/nPayment type: {0}", /*PaymentType Global Variable*/);
+            if (/*payment type == check*/)
+            {
+                Console.WriteLine("Charged to check number: {0}", /*CheckNumber Global Variable*/);
+            }
+            else if (/*payment type == card*/)
+            {
+                Console.WriteLine("\nCharged to card number: {0}", /*CardNumber Global Variable*/);
+                Console.WriteLine("Exp: {0}", /*CardExpDate Global Variable*/);
+                Console.WriteLine("CVV: {0}", /*CardCVV Global Variable*/);
+            }
+            //Cash Payment
+            else
+            {
+                Console.WriteLine("\nCash tendered: {0}", /*CashTendered Global Variable*/);
+                Console.WriteLine("Change due: {0}", /*Change Global Variable*/);
+            }
+            Console.WriteLine("Thank you for shopping at The General Store!");
+        }
     }
 }

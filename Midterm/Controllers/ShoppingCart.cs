@@ -38,7 +38,7 @@ namespace Controllers
         //Call to return total after tax
         public static double GetTotal()
         {
-            return GetSubtotal() * 1.06;
+            return GetSubtotal() + GetTax();
         }
         
         //Checks the list "Cart" to see if the new item matches an existing item
