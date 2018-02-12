@@ -3,7 +3,7 @@
     {
       "name": "Hotdog",
       "category": "Food",
-      "description": "Falic Meat",
+      "description": "Phallic Meat",
       "price": 1.50
     },
     {
@@ -15,7 +15,7 @@
     {
       "name": "Passion Fruit",
       "category": "Food",
-      "description": "Juciy Squeeze",
+      "description": "Juicy Squeeze",
       "price": 4.50
     },
     {
@@ -44,19 +44,19 @@
     },
     {
       "name": "Forks",
-      "category": "Untinsles",
+      "category": "Utensils",
       "description": "100 plastic forks",
       "price": 5.99
     },
     {
       "name": "Spoons",
-      "category": "Untinsles",
+      "category": "Utensils",
       "description": "100 plastic spoons",
       "price": 5.99
     },
     {
       "name": "Plates",
-      "category": "Untinsles",
+      "category": "Utensils",
       "description": "50 plastic plates",
       "price": 15.99
     },
@@ -67,7 +67,7 @@
       "price": 499.99
     },
     {
-      "name": "Nvdia GTX 1080 Graphic card",
+      "name": "Nvidia GTX 1080 Graphics card",
       "category": "PC parts",
       "description": "Bitcoin mining hardware",
       "price": 1999.99
