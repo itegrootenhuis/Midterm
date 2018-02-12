@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Controllers\ShoppingCart.cs" />
     <Compile Include="Controllers\AppNavigater.cs" />
-    <Compile Include="Controllers\ShoppingCart.cs" />
     <Compile Include="ShoppingCartItem.cs" />
     <Compile Include="Views\Card.cs" />
     <Compile Include="Views\Cash.cs" />

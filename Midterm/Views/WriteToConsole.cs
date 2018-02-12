@@ -19,17 +19,15 @@ namespace Views
             foreach (Product prod in products)
             {
                 counter++;
-                Console.WriteLine("{4} : {0}\t{1}\t{2}\t{3}", prod.Name, prod.Category, prod.Description, prod.Price, counter);
+                Console.WriteLine("{4, 2} : {0, -32}{1, -10:c}{2, -20}{3, -10}", prod.Name, prod.Price, prod.Category, prod.Description, counter);
             }
         }
-
-        
 
         internal static void GetUserProduct()
         {
             int userInput;
 
-            Console.Write("Choose a product by the number: ");
+            Console.Write("\nEnter a product number to add it to your cart: ");
             bool bit = int.TryParse(Console.ReadLine(), out userInput);
 
             if (bit)
