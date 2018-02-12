@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Midterm
+
+namespace Models
 {
-    public interface payment
+    public interface IPayment
     {
-        bool MakePayment(double amount);
-
-
+        bool ValidPayment();
     }
 }
