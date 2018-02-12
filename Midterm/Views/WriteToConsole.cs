@@ -80,14 +80,14 @@ namespace Views
 
         internal static string CheckOutOrNot()
         {
-            Console.Write("Would you like to check out? (Y/N): ");
+            Console.Write("\nWould you like to check out? (Y/N): ");
             string continueShopping = Console.ReadLine();
             return continueShopping.ToLower();
         }
 
         public static void PrintReceipt()
         {
-            Console.WriteLine("Receipt:\n====================");
+            Console.WriteLine("\nReceipt:\n====================");
             foreach (ShoppingCartItem prod in ShoppingCart.Cart)
             {
                 Console.WriteLine("{0} X {1} | {2, 7:C}", prod.Qty, prod.Product.Name, (prod.Qty * prod.Product.Price));
@@ -111,22 +111,22 @@ namespace Views
             //Cash Payment
             else
             {
-                Console.WriteLine("\nCash tendered: {0}", CashPayment.CashTendered);
-                Console.WriteLine("Change due: {0}", CashPayment.Change);
+                Console.WriteLine("\nCash tendered: {0:C}", CashPayment.CashTendered);
+                Console.WriteLine("Change due: {0:C}", CashPayment.Change);
             }
-            Console.WriteLine("Thank you for shopping at The General Store!");
+            Console.WriteLine("\nThank you for shopping at The General Store!");
             cartHasProducts = false;
         }
 
         internal static void GoodBye()
         {
-            Console.WriteLine("Thanks for shopping at the General Store, press any key to exit.");
+            Console.WriteLine("\nThanks for shopping at the General Store, press any key to exit.");
             Console.ReadKey();
         }
 
         internal static string ShopAgain()
         {
-            Console.WriteLine("Would you like to shop again? (Y/N): ");
+            Console.WriteLine("\nWould you like to shop again? (Y/N): ");
             string shopAgain = Console.ReadLine();
 
             return shopAgain.ToLower();
