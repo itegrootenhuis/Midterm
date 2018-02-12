@@ -52,19 +52,23 @@
     <Compile Include="Views\Cash.cs" />
     <Compile Include="Views\Check.cs" />
     <Compile Include="Controllers\PaymentTypeController.cs" />
-    <Compile Include="Models\make payment.cs" />
     <Compile Include="Models\HandleJsonData.cs" />
+    <Compile Include="Models\make payment.cs" />
     <Compile Include="Models\ProductsList.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\ShoppingCart.cs" />
+    <Compile Include="ShoppingCartItem.cs" />
+    <Compile Include="Views\card.cs" />
+    <Compile Include="Views\cash.cs" />
+    <Compile Include="Views\Check.cs" />
     <Compile Include="Views\GetPaymentType.cs" />
     <Compile Include="Views\WriteToConsole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="products.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
