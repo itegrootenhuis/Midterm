@@ -9,13 +9,39 @@ using Models;
 namespace Midterm
 
 {
-    public class CheckPayment : IPayment
+    public class CheckPayment
     {
-        public string CheckNum { get; set; }
-        public bool ValidPayment()
+        public static int CheckNum { get; set; }
+        public static int VCheckNum;
+        public static bool CheckParse;
+
+        public static bool ValidPayment()
         {
-            Console.Write("Enter the check number :");
-            CheckNum = Console.ReadLine();
+            Console.Write("Enter the check number (xxxx):");
+            string CheckInput = Console.ReadLine();
+
+            if (CheckInput.Length == 3)
+            {
+                CheckParse = int.TryParse(CheckInput, out VCheckNum);
+
+                if (CheckParse)
+                    CheckNum = VCheckNum;
+
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Your input was invalid");
+                    ValidPayment();
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Your input was invalid");
+                ValidPayment();
+            }
+
+        
             return true;
         }
     }

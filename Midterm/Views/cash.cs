@@ -4,20 +4,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
+using Controllers;
+
 
 namespace Midterm
 {
-    public class CashPayment : IPayment
+    public class CashPayment
     {
         //TODO make change and validate
 
-        public double CashTendered { get; set; }
+        public static double CashTendered { get; set; }
+        public static double Change { get; set; }
 
-        public bool ValidPayment()
+
+
+        public static void ValidPayment()
         {
-            Console.WriteLine("Enter amount amout to be tendered");
-            CashTendered = double.Parse(Console.ReadLine());
-            return true;
+            double VCashTendered;
+            bool CashParse;
+            Console.WriteLine("Enter amount to be tendered");
+            string CashInput = Console.ReadLine();
+
+            CashParse = double.TryParse(CashInput, out VCashTendered);
+            if (CashParse)
+                
+            {
+
+                if (CashTendered < ShoppingCart.GetTotal())
+                {
+                    Console.WriteLine("Not enough money for payment");
+                    ValidPayment();
+
+                }
+                else
+                {
+                    CashTendered = VCashTendered;
+                    Change = CashTendered - ShoppingCart.GetTotal();
+                }
+            }
+            else
+            {
+                
+                Console.Clear();
+                Console.WriteLine("Invalid input");
+                ValidPayment();
+            } 
+
         }
+
+
+
     }
 }

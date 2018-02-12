@@ -10,7 +10,5 @@ namespace Models
     public interface IPayment
     {
         bool ValidPayment();
-
-
     }
 }
