@@ -11,7 +11,7 @@ namespace Midterm
 {
     public class CheckPayment : IPayment
     {
-        string CheckNum { get; set; }
+        public string CheckNum { get; set; }
         public bool ValidPayment()
         {
             Console.Write("Enter the check number :");

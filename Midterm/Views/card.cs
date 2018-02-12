@@ -11,9 +11,9 @@ namespace Midterm
 
     public class Cardpayment : IPayment
     {
-        string CVV { get; set; }
-        string CardNum { get; set; }
-        string Security {get; set;}
+        public string CVV { get; set; }
+        public string CardNum { get; set; }
+        public string Security {get; set;}
 
 
         public bool ValidPayment()

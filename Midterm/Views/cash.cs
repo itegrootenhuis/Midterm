@@ -11,7 +11,7 @@ namespace Midterm
     {
         //TODO make change and validate
 
-        double CashTendered { get; set; }
+        public double CashTendered { get; set; }
 
         public bool ValidPayment()
         {
