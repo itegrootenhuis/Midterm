@@ -12,6 +12,7 @@ namespace Views
     public static class WriteToConsole
     {
         public static int counter = 0;
+        public static bool cartHasProducts = false;
 
         internal static void WriteProducts(ProductsList productsList)
         {
@@ -24,7 +25,7 @@ namespace Views
                 Console.WriteLine("{4, 2} : {0, -32}{1, -10:c}{2, -20}{3, -10}", prod.Name, prod.Price, prod.Category, prod.Description, counter);
             }
             
-            if(ShoppingCart.Cart.Count > 0)
+            if(cartHasProducts)
             {
                 counter++;
                 Console.WriteLine("{0, 2} : You have {1} item(s) in your cart, select this option to checkout.", counter, ShoppingCart.Cart.Count);
@@ -36,22 +37,28 @@ namespace Views
             Console.WriteLine("\nEnter a product number to add it to your cart: ");
             bool bit = int.TryParse(Console.ReadLine(), out int userInput);
 
-            if (bit && ShoppingCart.Cart.Count >= 0 && userInput != counter)
+            if(bit && cartHasProducts && userInput == counter)
             {
+                AppNavigater.CheckOut(true);
+            }
+            else if (bit && userInput <= counter)
+            {
+                cartHasProducts = true;
                 AppNavigater.AddProductToCart(userInput, GetQuantity());
                 Console.Clear();
                 AppNavigater.InitApp();
             }
-            else if (bit && ShoppingCart.Cart.Count > 0 && userInput == counter)
-            {
-                AppNavigater.CheckOut(true);
-            }
             else
             {
-                Console.Clear();
-                Console.WriteLine("Your input was invalid");
-                AppNavigater.InitApp();
+                InvalidInput();
             }
+        }
+
+        private static void InvalidInput()
+        {
+            Console.Clear();
+            Console.WriteLine("Your input was invalid\n\n");
+            AppNavigater.InitApp();
         }
 
         private static int GetQuantity()
@@ -85,27 +92,44 @@ namespace Views
             {
                 Console.WriteLine("{0} X {1} | {2, 7:C}", prod.Qty, prod.Product.Name, (prod.Qty * prod.Product.Price));
             }
-            Console.WriteLine("\nSubtotal: {0:C}" + ShoppingCart.GetSubtotal());
+
+            Console.WriteLine("\nSubtotal: {0:C}", ShoppingCart.GetSubtotal());
             Console.WriteLine("Tax: {0:C}", ShoppingCart.GetTax());
             Console.WriteLine("Total: {0:C}", ShoppingCart.GetTotal());
-            Console.WriteLine("/nPayment type: {0}", /*PaymentType Global Variable*/);
-            if (/*payment type == check*/)
+            Console.WriteLine("\nPayment type: {0}", PaymentTypeController.PaymentOption);
+
+            if (PaymentTypeController.PaymentOption.ToLower() == "check")
             {
-                Console.WriteLine("Charged to check number: {0}", /*CheckNumber Global Variable*/);
+                Console.WriteLine("Charged to check number: {0}", CheckPayment.CheckNum);
             }
-            else if (/*payment type == card*/)
+            else if (PaymentTypeController.PaymentOption.ToLower() == "card")
             {
-                Console.WriteLine("\nCharged to card number: {0}", /*CardNumber Global Variable*/);
-                Console.WriteLine("Exp: {0}", /*CardExpDate Global Variable*/);
-                Console.WriteLine("CVV: {0}", /*CardCVV Global Variable*/);
+                Console.WriteLine("\nCharged to card number: {0}", Cardpayment.CardNum);
+                Console.WriteLine("Exp: {0}", Cardpayment.ExpDate);
+                Console.WriteLine("CVV: {0}", Cardpayment.CVV);
             }
             //Cash Payment
             else
             {
-                Console.WriteLine("\nCash tendered: {0}", /*CashTendered Global Variable*/);
-                Console.WriteLine("Change due: {0}", /*Change Global Variable*/);
+                Console.WriteLine("\nCash tendered: {0}", CashPayment.CashTendered);
+                Console.WriteLine("Change due: {0}", CashPayment.Change);
             }
             Console.WriteLine("Thank you for shopping at The General Store!");
+            cartHasProducts = false;
+        }
+
+        internal static void GoodBye()
+        {
+            Console.WriteLine("Thanks for shopping at the General Store, press any key to exit.");
+            Console.ReadKey();
+        }
+
+        internal static string ShopAgain()
+        {
+            Console.WriteLine("Would you like to shop again? (Y/N): ");
+            string shopAgain = Console.ReadLine();
+
+            return shopAgain.ToLower();
         }
     }
 }

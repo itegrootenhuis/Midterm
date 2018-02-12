@@ -5,9 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 
-
 namespace Midterm
-
 {
     public class CheckPayment
     {
@@ -15,18 +13,17 @@ namespace Midterm
         public static int VCheckNum;
         public static bool CheckParse;
 
-        public static bool ValidPayment()
+        public static void ValidPayment()
         {
             Console.Write("Enter the check number (xxxx):");
             string CheckInput = Console.ReadLine();
 
-            if (CheckInput.Length == 3)
+            if (CheckInput.Length == 4)
             {
                 CheckParse = int.TryParse(CheckInput, out VCheckNum);
 
                 if (CheckParse)
                     CheckNum = VCheckNum;
-
                 else
                 {
                     Console.Clear();
@@ -40,9 +37,6 @@ namespace Midterm
                 Console.WriteLine("Your input was invalid");
                 ValidPayment();
             }
-
-        
-            return true;
         }
     }
 }

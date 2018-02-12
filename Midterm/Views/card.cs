@@ -6,37 +6,30 @@ using System.Threading.Tasks;
 using Models;
 
 namespace Midterm
-
- 
 {
-    
-    //TODO Validate card information entered
-
     public class Cardpayment
     {
         public static int CVV { get; set; }
-        public static int CardNum { get; set; }
+        public static string CardNum { get; set; }
         public static string ExpDate { get; set; }
 
         public static void ValidPayment()
         {
-         ValidCardNum();
-         VerifyCVV();
-         VerifyExpDate();
+            ValidCardNum();
+            VerifyCVV();
+            VerifyExpDate();
         }
         private static void ValidCardNum()
         {
-            int VCardNum;
             bool CardParse;
             Console.Write("Enter the card Number (xxxxxxxxxxxxxxxx):");
             string CardInput = Console.ReadLine();
             if (CardInput.Length == 16)
             {
-                CardParse = int.TryParse(CardInput, out VCardNum);
+                CardParse = double.TryParse(CardInput, out double VCardNum);
 
                 if (CardParse)
-                    CardNum = VCardNum;
-
+                    CardNum = CardInput;
                 else
                 {
                     Console.Clear();
@@ -50,29 +43,23 @@ namespace Midterm
                 Console.WriteLine("Your input was invalid");
                 ValidCardNum();
             }
-
         }
 
         public static void VerifyCVV()
         {
-
             Console.WriteLine("CVV # (xxx)");
             //VCVV stands for 
-            int VCVV;
             bool CVVParse;
             string CVVInput = Console.ReadLine();
 
             if (CVVInput.Length == 3)
             {
-                CVVParse = int.TryParse(CVVInput, out VCVV);
+                CVVParse = int.TryParse(CVVInput, out int VCVV);
 
                 if (CVVParse)
                 {
-
                     CVV = VCVV;
                 }
-
-
                 else
                 {
                     Console.Clear();
@@ -95,7 +82,6 @@ namespace Midterm
             string expDate = Console.ReadLine();  
             DateTime dt = Convert.ToDateTime(expDate);
 
-
             if (DateTime.TryParse(expDate, out dt))
                 if (dt < DateTime.Now)
                 {
@@ -114,10 +100,5 @@ namespace Midterm
                 return VerifyExpDate();
             }
         }
-
-
-       
     }
-
-        
 }

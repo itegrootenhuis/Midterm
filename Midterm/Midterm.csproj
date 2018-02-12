@@ -50,12 +50,8 @@
     <Compile Include="Views\Card.cs" />
     <Compile Include="Views\Cash.cs" />
     <Compile Include="Controllers\PaymentTypeController.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Models\IPayment.cs" />
->>>>>>> Marshal
     <Compile Include="Models\HandleJsonData.cs" />
-    <Compile Include="Models\make payment.cs" />
     <Compile Include="Models\ProductsList.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />

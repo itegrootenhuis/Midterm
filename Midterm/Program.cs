@@ -12,11 +12,13 @@ namespace Midterm
     {
         static void Main(string[] args)
         {
-            PaymentTypeController.init();
+            Console.WriteLine("Welcome to the General Store!\n");
+            AppNavigater.InitApp();
+            //PaymentTypeController.init();
         }
     }
 }
 
-        {
-            Console.WriteLine("Welcome to the General Store!\n");
-            AppNavigater.InitApp();
+        //{
+        //    Console.WriteLine("Welcome to the General Store!\n");
+        //    AppNavigater.InitApp();

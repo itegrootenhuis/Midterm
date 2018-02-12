@@ -4,41 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Midterm
-
 {
     class PaymentTypeController
     {
         public static string PaymentOption { get; set; }
 
-        public static void init()
+        public static void GetPayment()
         {
             GetPaymentType.GetPaymentView();
-            PaymentType(GetPaymentType.Option, GetPaymentType.Amount);
+            PaymentType(GetPaymentType.Option); //GetPaymentType.Amount
         }
 
-
-        public static void PaymentType(string option, double amount)
+        public static void PaymentType(string option)
         {
-        
-
             switch (option)
             {
                 case "1":
-            
                     CashPayment.ValidPayment();
                     PaymentOption = "Cash";
-                   break;
+                    break;
 
                 case "2":
-
-                   Cardpayment.ValidPayment();
+                    Cardpayment.ValidPayment();
                     PaymentOption = "Card";
                     break;
 
                 case "3":
-                   
                     CheckPayment.ValidPayment();
                     PaymentOption = "Check";
                     break;
@@ -47,14 +39,7 @@ namespace Midterm
                     Console.WriteLine("invalid entry");
                     break;
             }
-
-            Console.ReadKey();
-
-        }
-
-        private static void MakeChange(double cashTendered, double amount)
-        {
-            throw new NotImplementedException();
+            //Console.ReadKey();
         }
 
         // ALL THE CODE LISTED BELOW WILL CHECK IF It IS A REAL LIFE WORKING CREDIT CARD

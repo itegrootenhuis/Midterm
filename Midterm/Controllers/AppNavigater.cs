@@ -22,7 +22,19 @@ namespace Controllers
         {
             if (IsCheckout)
             {
-                // TODO: Checkout
+                PaymentTypeController.GetPayment();
+                WriteToConsole.PrintReceipt();
+
+                if (WriteToConsole.ShopAgain() == "y")
+                {
+                    ShoppingCart.Cart.Clear();
+                    Console.Clear();
+                    InitApp();
+                }
+                else
+                {
+                    WriteToConsole.GoodBye();
+                }
             }
             else
             {
