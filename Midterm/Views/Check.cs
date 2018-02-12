@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
 
 
 namespace Midterm
 
 {
-    public class CheckPayment : payment
+    public class CheckPayment : IPayment
     {
-        public bool MakePayment(double amount)
+        string CheckNum { get; set; }
+        public bool ValidPayment()
         {
             Console.Write("Enter the check number :");
-            string checknum = Console.ReadLine();
+            CheckNum = Console.ReadLine();
             return true;
         }
     }

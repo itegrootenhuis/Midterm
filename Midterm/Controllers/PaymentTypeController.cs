@@ -29,18 +29,18 @@ namespace Midterm
 
                     CashPayment cash = new CashPayment();
                         
-                      cash.MakePayment(amount);
+                      cash.ValidPayment();
                     break;
 
                 case "2":
                    Cardpayment card = new Cardpayment();
                    
-                    card.MakePayment(amount);
+                    card.ValidPayment();
                     break;
 
                 case "3":
                      CheckPayment check = new CheckPayment();
-                    check.MakePayment(amount);
+                    check.ValidPayment();
                     break;
 
                 default:

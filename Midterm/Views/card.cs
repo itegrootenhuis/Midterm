@@ -3,19 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
 
 namespace Midterm
 {
-    public class Cardpayment : payment
+    //TODO Validate card information entered
+
+    public class Cardpayment : IPayment
     {
-        public bool MakePayment(double amount)
+        string CVV { get; set; }
+        string CardNum { get; set; }
+        string Security {get; set;}
+
+
+        public bool ValidPayment()
         {
             Console.Write("Enter the card Number :");
-            string cardNum = Console.ReadLine();
+            CardNum = Console.ReadLine();
+
+
             Console.Write("Security code: ");
-            string security = Console.ReadLine();
+            Security = Console.ReadLine();
+
             Console.WriteLine("CVV #");
-            string cvv = Console.ReadLine();
+            CVV = Console.ReadLine();
+
             Console.WriteLine("card number :  valid");
             Console.WriteLine("account credited");
 
