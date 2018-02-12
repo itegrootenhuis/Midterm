@@ -7,7 +7,7 @@ using Models;
 using Controllers;
 
 
-namespace Midterm
+namespace Views
 {
     public class CashPayment
     {
