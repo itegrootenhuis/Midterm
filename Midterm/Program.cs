@@ -14,11 +14,7 @@ namespace Midterm
         {
             Console.WriteLine("Welcome to the General Store!\n");
             AppNavigater.InitApp();
-            //PaymentTypeController.init();
         }
     }
 }
-
-        //{
-        //    Console.WriteLine("Welcome to the General Store!\n");
-        //    AppNavigater.InitApp();
+       
