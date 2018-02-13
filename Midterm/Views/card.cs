@@ -19,7 +19,7 @@ namespace Views
             VerifyCVV();
             VerifyExpDate();
         }
-        private static void ValidCardNum()
+        public static void ValidCardNum()
         {
             bool CardParse;
             Console.Write("Enter the card Number (xxxxxxxxxxxxxxxx):");

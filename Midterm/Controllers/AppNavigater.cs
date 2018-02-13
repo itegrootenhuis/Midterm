@@ -22,6 +22,7 @@ namespace Controllers
         {
             if (IsCheckout)
             {
+                WriteToConsole.ItemSummary();
                 PaymentTypeController.GetPayment();
                 WriteToConsole.PrintReceipt();
 

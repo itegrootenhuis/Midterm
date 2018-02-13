@@ -38,10 +38,9 @@ namespace Controllers
                     break;
 
                 default:
-                    Console.WriteLine("invalid entry");
+                    Console.WriteLine("Invalid entry");
                     break;
             }
-            //Console.ReadKey();
         }
 
         // ALL THE CODE LISTED BELOW WILL CHECK IF It IS A REAL LIFE WORKING CREDIT CARD

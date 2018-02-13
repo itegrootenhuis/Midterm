@@ -69,7 +69,7 @@ namespace Views
 
         private static int GetQuantity()
         {
-            Console.Write("How many do you want?: ");
+            Console.Write("How many would you like: ");
             bool bit = int.TryParse(Console.ReadLine(), out int qty);
 
             if (bit)
@@ -93,7 +93,15 @@ namespace Views
 
         public static void PrintReceipt()
         {
-            Console.WriteLine("\nReceipt:\n====================");
+            ItemSummary();
+            PaymentSummary();
+            Console.WriteLine("\nThank you for shopping at The General Store!");
+            cartHasProducts = false;
+        }
+
+        public static void ItemSummary()
+        {
+            Console.WriteLine("\nItem Summary:\n====================");
             foreach (ShoppingCartItem prod in ShoppingCart.Cart)
             {
                 Console.WriteLine("{0} X {1} | {2, 7:C}", prod.Qty, prod.Product.Name, (prod.Qty * prod.Product.Price));
@@ -102,31 +110,32 @@ namespace Views
             Console.WriteLine("\nSubtotal: {0:C}", ShoppingCart.GetSubtotal());
             Console.WriteLine("Tax: {0:C}", ShoppingCart.GetTax());
             Console.WriteLine("Total: {0:C}", ShoppingCart.GetTotal());
-            Console.WriteLine("\nPayment type: {0}", PaymentTypeController.PaymentOption);
+        }
 
+        public static void PaymentSummary()
+        {
+            Console.WriteLine("\nPayment type: {0}", PaymentTypeController.PaymentOption);
             if (PaymentTypeController.PaymentOption.ToLower() == "check")
             {
                 Console.WriteLine("Charged to check number: {0}", CheckPayment.CheckNum);
             }
             else if (PaymentTypeController.PaymentOption.ToLower() == "card")
             {
-                Console.WriteLine("\nCharged to card number: {0}", Cardpayment.CardNum);
+                Console.WriteLine("Charged to card number: XXXX-XXXX-XXXX-{0}", Cardpayment.CardNum.Substring(12,4));
                 Console.WriteLine("Exp: {0}", Cardpayment.ExpDate);
                 Console.WriteLine("CVV: {0}", Cardpayment.CVV);
             }
             //Cash Payment
             else
             {
-                Console.WriteLine("\nCash tendered: {0:C}", CashPayment.CashTendered);
+                Console.WriteLine("Cash tendered: {0:C}", CashPayment.CashTendered);
                 Console.WriteLine("Change due: {0:C}", CashPayment.Change);
             }
-            Console.WriteLine("\nThank you for shopping at The General Store!");
-            cartHasProducts = false;
         }
 
         internal static void GoodBye()
         {
-            Console.WriteLine("\nThanks for shopping at the General Store, press any key to exit.");
+            Console.WriteLine("\nThank you for shopping at the General Store, press any key to exit.");
             Console.ReadKey();
         }
 

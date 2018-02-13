@@ -16,8 +16,7 @@ namespace Views
         public static void ValidPayment()
         {
             bool CashParse;
-            Console.WriteLine("Enter amount to be tendered");
-            //string CashInput = Console.ReadLine();
+            Console.WriteLine("Enter cash amount to be tendered");
 
             CashParse = double.TryParse(Console.ReadLine(), out double VCashTendered);
             if (CashParse)
