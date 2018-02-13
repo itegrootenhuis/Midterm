@@ -1,22 +1,22 @@
 {
   "products": [
     {
-      "name": "Hotdog",
-      "category": "Food",
-      "description": "Phallic Meat",
-      "price": 1.50
-    },
-    {
-      "name": "Hamburger",
       "category": "Food",
       "description": "Best damn burger around",
-      "price": 2.75
+      "price": 2.75,
+	  "name": "Hamburger",
     },
     {
       "name": "Passion Fruit",
       "category": "Food",
       "description": "Juicy Squeeze",
       "price": 4.50
+    },
+	{
+      "category": "Food",
+      "description": "Phallic Meat",
+      "price": 1.50,
+	  "name": "Hotdog",
     },
     {
       "name": "2x4 Wood",

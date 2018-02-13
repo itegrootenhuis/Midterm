@@ -28,7 +28,13 @@ namespace Views
             if(cartHasProducts)
             {
                 counter++;
-                Console.WriteLine("{0, 2} : You have {1} item(s) in your cart, select this option to checkout.", counter, ShoppingCart.Cart.Count);
+                int cartQty = 0;
+
+                foreach (ShoppingCartItem item in ShoppingCart.Cart)
+                {
+                    cartQty += item.Qty;
+                }
+                Console.WriteLine("\n{0, 2} : You have {1} item(s) in your cart, select this option to checkout.", counter, cartQty);
             }
         }
 
