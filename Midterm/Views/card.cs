@@ -48,7 +48,6 @@ namespace Views
         public static void VerifyCVV()
         {
             Console.WriteLine("CVV # (xxx)");
-            //VCVV stands for 
             bool CVVParse;
             string CVVInput = Console.ReadLine();
 
@@ -80,13 +79,11 @@ namespace Views
             Console.WriteLine("Please enter expiration date mm/yyyy");
 
             string expDate = Console.ReadLine();  
-            DateTime dt = Convert.ToDateTime(expDate);
 
-            if (DateTime.TryParse(expDate, out dt))
+            if (DateTime.TryParse(expDate, out DateTime dt))
                 if (dt < DateTime.Now)
                 {
                     Console.WriteLine("card has expired");
-
                     return VerifyExpDate();
                 }
                 else

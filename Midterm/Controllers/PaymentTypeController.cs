@@ -15,7 +15,7 @@ namespace Controllers
         public static void GetPayment()
         {
             GetPaymentType.GetPaymentView();
-            PaymentType(GetPaymentType.Option); //GetPaymentType.Amount
+            PaymentType(GetPaymentType.Option);
         }
 
         public static void PaymentType(string option)
