@@ -4,7 +4,7 @@
       "category": "Food",
       "description": "Best damn burger around",
       "price": 2.75,
-	  "name": "Hamburger",
+	    "name": "Hamburger"
     },
     {
       "name": "Passion Fruit",
@@ -14,9 +14,9 @@
     },
 	{
       "category": "Food",
-      "description": "Phallic Meat",
+      "description": "Great dogs",
       "price": 1.50,
-	  "name": "Hotdog",
+	    "name": "Hotdog"
     },
     {
       "name": "2x4 Wood",
