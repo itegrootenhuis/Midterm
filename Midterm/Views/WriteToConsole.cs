@@ -141,7 +141,7 @@ namespace Views
 
         internal static string ShopAgain()
         {
-            Console.WriteLine("\nWould you like to shop again? (Y/N): ");
+            Console.WriteLine("\nPress Y to shop again or press any other key to exit the app: ");
             string shopAgain = Console.ReadLine();
 
             return shopAgain.ToLower();
