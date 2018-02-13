@@ -18,7 +18,6 @@ namespace Controllers
                 Cart = new List<ShoppingCartItem>();
         }
 
-        //Call to get total due before tax
         public static double GetSubtotal()
         {
             double total = 0.00;
@@ -35,7 +34,6 @@ namespace Controllers
             return tax;
         }
 
-        //Call to return total after tax
         public static double GetTotal()
         {
             return GetSubtotal() + GetTax();

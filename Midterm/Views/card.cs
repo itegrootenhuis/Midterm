@@ -19,10 +19,11 @@ namespace Views
             VerifyCVV();
             VerifyExpDate();
         }
+
         public static void ValidCardNum()
         {
             bool CardParse;
-            Console.Write("Enter the card Number (xxxxxxxxxxxxxxxx):");
+            Console.Write("Enter the card number (xxxxxxxxxxxxxxxx):");
             string CardInput = Console.ReadLine();
             if (CardInput.Length == 16)
             {
@@ -47,7 +48,7 @@ namespace Views
 
         public static void VerifyCVV()
         {
-            Console.WriteLine("CVV # (xxx)");
+            Console.WriteLine("Enter the CVV number (xxx):");
             bool CVVParse;
             string CVVInput = Console.ReadLine();
 
@@ -76,14 +77,14 @@ namespace Views
 
         public static bool VerifyExpDate()
         {
-            Console.WriteLine("Please enter expiration date mm/yyyy");
+            Console.WriteLine("Enter expiration date MM/YYYY:");
 
             string expDate = Console.ReadLine();  
 
             if (DateTime.TryParse(expDate, out DateTime dt))
                 if (dt < DateTime.Now)
                 {
-                    Console.WriteLine("card has expired");
+                    Console.WriteLine("Card has expired");
                     return VerifyExpDate();
                 }
                 else
@@ -93,7 +94,7 @@ namespace Views
                 }
             else
             {
-                Console.WriteLine("invalid input");
+                Console.WriteLine("Invalid input");
                 return VerifyExpDate();
             }
         }
