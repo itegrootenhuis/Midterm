@@ -1,74 +1,76 @@
 {
-	"product":{
-		"name": "Hotdog",
-		"category": "Food",
-		"description": "Falic Meat",
-		"price": 1.50
-	},
-	"product":{
-		"name": "Hamburger",
-		"category": "Food",
-		"description": "Best damn burger around",
-		"price": 2.75
-	},
-	"product":{
-		"name": "Passion Fruit",
-		"category": "Food",
-		"description": "Juciy Squeeze",
-		"price": 4.50
-	},
-	"product":{
-		"name": "2x4 Wood",
-		"category": "Building Materials",
-		"description": "Solid piece of wood",
-		"price": 6.00
-	},
-	"product":{
-		"name": "Metal Screws",
-		"category": "Building Materials",
-		"description": "Hold stuff and things together with these!",
-		"price": 3.00
-	},
-	"product":{
-		"name": "Hammer",
-		"category": "Building Tools",
-		"description": "Basic Hammer",
-		"price": 12.99
-	},
-	"product":{
-		"name": "Screwdriver",
-		"category": "Building Tools",
-		"description": "Basic Screwdriver",
-		"price": 10.99
-	},
-	"product":{
-		"name": "Forks",
-		"category": "Untinsles",
-		"description": "100 plastic forks",
-		"price": 5.99
-	},
-	"product":{
-		"name": "Spoons",
-		"category": "Untinsles",
-		"description": "100 plastic spoons",
-		"price": 5.99
-	},
-	"product":{
-		"name": "Plates",
-		"category": "Untinsles",
-		"description": "50 plastic plates",
-		"price": 15.99
-	},
-	"product":{
-		"name": "Xbox one x",
-		"category": "Entertainment",
-		"description": "The best gaming console on the market.",
-		"price": 499.99
-	},
-	"product":{
-		"name": "Nvdia GTX 1080 Graphic card",
-		"category": "PC parts",
-		"description": "Bitcoin mining hardware",
-		"price": 1999.99
-	}
+  "products": [
+    {
+      "category": "Food",
+      "description": "Best damn burger around",
+      "price": 2.75,
+	    "name": "Hamburger"
+    },
+    {
+      "name": "Passion Fruit",
+      "category": "Food",
+      "description": "Juicy Squeeze",
+      "price": 4.50
+    },
+	{
+      "category": "Food",
+      "description": "Great dogs",
+      "price": 1.50,
+	    "name": "Hotdog"
+    },
+    {
+      "name": "2x4 Wood",
+      "category": "Building Materials",
+      "description": "Solid piece of wood",
+      "price": 6.00
+    },
+    {
+      "name": "Metal Screws",
+      "category": "Building Materials",
+      "description": "Hold stuff and things together with these!",
+      "price": 3.00
+    },
+    {
+      "name": "Hammer",
+      "category": "Building Tools",
+      "description": "Basic Hammer",
+      "price": 12.99
+    },
+    {
+      "name": "Screwdriver",
+      "category": "Building Tools",
+      "description": "Basic Screwdriver",
+      "price": 10.99
+    },
+    {
+      "name": "Forks",
+      "category": "Utensils",
+      "description": "100 plastic forks",
+      "price": 5.99
+    },
+    {
+      "name": "Spoons",
+      "category": "Utensils",
+      "description": "100 plastic spoons",
+      "price": 5.99
+    },
+    {
+      "name": "Plates",
+      "category": "Utensils",
+      "description": "50 plastic plates",
+      "price": 15.99
+    },
+    {
+      "name": "Xbox one x",
+      "category": "Entertainment",
+      "description": "The best gaming console on the market.",
+      "price": 499.99
+    },
+    {
+      "name": "Nvidia GTX 1080 Graphics card",
+      "category": "PC parts",
+      "description": "Bitcoin mining hardware",
+      "price": 1999.99
+    }
+  ]
 }
